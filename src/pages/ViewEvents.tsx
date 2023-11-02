@@ -1,6 +1,8 @@
+import EventsTable from "../components/EventsTable"
+
 const ViewEvents = () => {
   return (
-    <h1>View Events</h1>
+    <EventsTable />
   )
 }
 
