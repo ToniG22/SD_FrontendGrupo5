@@ -1,6 +1,8 @@
+import Form from "../components/Form"
+
 const AddEvent = () => {
   return (
-    <h1>Add Event</h1>
+    <Form/>
   )
 }
 
