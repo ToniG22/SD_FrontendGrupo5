@@ -1,0 +1,21 @@
+.events-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.events-table thead th {
+    background-color: var(--highlight);
+    border: solid 1px #DDEEEE;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #333;
+}
+
+.events-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #ffffff;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #333;
+}
