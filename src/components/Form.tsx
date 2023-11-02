@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../assets/css/Form.css";
 
 const Form = () => {
   const [inputs, setInputs] = useState({
@@ -22,8 +23,9 @@ const Form = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
+      <div>Insert Values</div>
       <label>
-        Local:
+        Local: <br/>
         <input
           type="text"
           name="local"
@@ -32,7 +34,7 @@ const Form = () => {
         />
       </label>
       <label>
-        Date:
+        Date: <br/>
         <input
           type="date"
           name="date"
@@ -41,7 +43,7 @@ const Form = () => {
         />
       </label>
       <label>
-        Time:
+        Time: <br/>
         <input
           type="text"
           name="time"
@@ -50,14 +52,14 @@ const Form = () => {
         />
       </label>
       <label>
-        Number of Participants:
+        Number of Participants: <br/>
         <input
           type="text"
           name="participants"
           value={inputs.participants || ""}
           onChange={handleChange}
         />
-      </label>
+      </label> <br/>
       <input type="submit" value="Submit" />
     </form>
   );
