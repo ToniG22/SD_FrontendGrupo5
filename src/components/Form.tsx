@@ -31,9 +31,9 @@ const Form = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <div>Insert Values</div>
+      <div className="title">Insert Event</div>
       <label>
-        Local: <br/>
+        Local: <br />
         <input
           type="text"
           name="local"
@@ -42,7 +42,7 @@ const Form = () => {
         />
       </label>
       <label>
-        Date:
+        Date <br />
         <DatePicker
           selected={inputs.date}
           onChange={(date) => handleDateChange(date, "date")}
@@ -50,7 +50,7 @@ const Form = () => {
         />
       </label>
       <label>
-        Time: <br/>
+        Time: <br />
         <input
           type="time"
           name="time"
@@ -59,14 +59,15 @@ const Form = () => {
         />
       </label>
       <label>
-        Number of Participants: <br/>
+        Number of Participants: <br />
         <input
           type="text"
           name="participants"
           value={inputs.participants || ""}
           onChange={handleChange}
         />
-      </label> <br/>
+      </label>{" "}
+      <br />
       <input type="submit" value="Submit" />
     </form>
   );

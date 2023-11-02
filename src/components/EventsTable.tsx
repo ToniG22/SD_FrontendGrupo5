@@ -53,14 +53,17 @@ const EventsTable: React.FC = () => {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, field: keyof Event) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    field: keyof Event
+  ) => {
     if (editedEvent) {
       setEditedEvent({
         ...editedEvent,
-        [field]: e.target.value
+        [field]: e.target.value,
       });
     }
-  }
+  };
 
   const handleDateChange = (date: Date | null, field: keyof Event) => {
     if (editedEvent && date) {
@@ -77,6 +80,15 @@ const EventsTable: React.FC = () => {
         ...editedEvent,
         [field]: time,
       });
+    }
+  };
+
+  const handleDelete = (id: number) => {
+    const updatedEvents = events.filter((event) => event.id !== id);
+    setEvents(updatedEvents);
+    if (editEventId === id) {
+      // If the deleted event is currently being edited, cancel the edit
+      handleCancel();
     }
   };
 
@@ -113,7 +125,11 @@ const EventsTable: React.FC = () => {
                   dateFormat="dd/MM/yyyy"
                 />
               ) : (
-                event.date.toLocaleDateString("en-GB", { day: '2-digit', month: '2-digit', year: 'numeric' })
+                event.date.toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })
               )}
             </td>
             <td>
@@ -145,7 +161,10 @@ const EventsTable: React.FC = () => {
                   <button onClick={handleCancel}>Cancel</button>
                 </>
               ) : (
-                <button onClick={() => handleEdit(event)}>Edit</button>
+                <>
+                  <button onClick={() => handleEdit(event)}>Edit</button>
+                  <button onClick={() => handleDelete(event.id)}>Delete</button>
+                </>
               )}
             </td>
           </tr>

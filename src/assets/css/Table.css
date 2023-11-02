@@ -14,8 +14,8 @@
 }
 
 .events-table tbody td {
+    background-color: #555;
     border: solid 1px #DDEEEE;
     color: #ffffff;
     padding: 10px;
-    text-shadow: 1px 1px 1px #333;
 }
