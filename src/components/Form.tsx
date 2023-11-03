@@ -68,7 +68,7 @@ const Form = () => {
         />
       </label>{" "}
       <br />
-      <input type="submit" value="Submit" />
+      <input className="sweep-button" type="submit" value="Submit" />
     </form>
   );
 };
